@@ -1,16 +1,16 @@
 <template>
-  <Header />
+  <Album1 />
 </template>
 
 <script>
-import Header from './Header.vue'
+import Album1 from './Album1'
 //import MainSite from './components/MainSite.vue'
 //import MainSite from './components/MainSite.vue'
 
 export default {
   name: "MainSite",
   components:{
-    Header
+    Album1
   }
 }
 </script>

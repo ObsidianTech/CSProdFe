@@ -9,13 +9,13 @@
           <div class="arrow"></div>
           <div class="tracklistcontainer">
             <table class="tracklist">
-              <tr class="track" v-for="track in tracks" :key="track" style="padding: 20px;">
+              <!--<tr class="track" v-for="track in tracks" :key="track" style="padding: 20px;">
                 <td>
                   {{ track }}
                   <button class="play">
                   </button>
                 </td>
-              </tr>
+              </tr>-->
             </table>
           </div>
         </div>
@@ -57,8 +57,9 @@
         "Withdrawal",
         "Sober",
         "A New Day"
-      ]
-    };
+      ],
+      file: '../assets/tracks/5G.mp3'
+    }
   }
 };
 </script>

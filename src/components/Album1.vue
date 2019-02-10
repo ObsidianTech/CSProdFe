@@ -9,13 +9,11 @@
           <div class="arrow"></div>
           <div class="tracklistcontainer">
             <table class="tracklist">
-              <!--<tr class="track" v-for="track in tracks" :key="track" style="padding: 20px;">
+              <tr class="track" v-for="track in tracks" :key="track.file"  style="padding: 20px;">
                 <td>
-                  {{ track }}
-                  <button class="play">
-                  </button>
+                  <player :name="track.name" :file="track.file" />
                 </td>
-              </tr>-->
+              </tr>
             </table>
           </div>
         </div>
@@ -41,25 +39,21 @@
 </template>
 
 <script>
+import player from './player'
     export default {
   name: "Album1",
   data() {
     return {
       tracks: [
-        "5G",
-        "VPN",
-        "3 A.M.",
-        "Amazon Prime",
-        "OMW",
-        "Peach Emoji (Interlude)",
-        "Torrents",
-        "Replase",
-        "Withdrawal",
-        "Sober",
-        "A New Day"
-      ],
-      file: '../assets/tracks/5G.mp3'
+        {
+          name: '5G',
+          file: '../assets/tracks/5G.mp3'
+        }
+      ]
     }
+  },
+  components:{
+    player
   }
 };
 </script>
@@ -198,10 +192,5 @@ table {
   width: 20%;
   height: auto;
   margin: 0 5% 0 5%;
-}
-
-.play{
-  background-color: #fff;
-  float: right;
 }
 </style>

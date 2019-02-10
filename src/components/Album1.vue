@@ -9,11 +9,7 @@
           <div class="arrow"></div>
           <div class="tracklistcontainer">
             <table class="tracklist">
-              <tr class="track" v-for="track in tracks" :key="track.file"  style="padding: 20px;">
-                <td>
-                  <player :name="track.name" :file="track.file" />
-                </td>
-              </tr>
+              <player/>
             </table>
           </div>
         </div>
@@ -24,7 +20,6 @@
             "What are these things doing to my mind, my body"?
             A drug is classified as any substance that causes physiological 
             change in your body. 
-            
             <br/><br/> Sound familiar? 
           </p>
         </div>
@@ -42,16 +37,6 @@
 import player from './player'
     export default {
   name: "Album1",
-  data() {
-    return {
-      tracks: [
-        {
-          name: '5G',
-          file: '../assets/tracks/5G.mp3'
-        }
-      ]
-    }
-  },
   components:{
     player
   }

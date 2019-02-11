@@ -25,9 +25,9 @@
         </div>
         <div class="footer">
           <div class="footericons">
-            <img src="../assets/icons/Facebook.svg" />
-            <img src="../assets/icons/Instagram.svg" />
-            <img src="../assets/icons/Twitter.svg" />
+            <a href="https://www.facebook.com/Crypt0Sound/"><img class="social" src="../assets/icons/Facebook.svg" /></a>
+            <a href="https://www.instagram.com/crypto_sound/?hl=en"><img class="social" src="../assets/icons/Instagram.svg" /></a>
+            <a href="https://twitter.com/i/notifications?lang=en"><img class="social" src="../assets/icons/Twitter.svg" /></a>
           </div>
         </div>
   </div>
@@ -172,9 +172,9 @@ table {
   display: flex;
 }
 
-.footer img{
+.social{
   flex: 30%;
-  width: 20%;
+  width: 85%;
   height: auto;
   margin: 0 5% 0 5%;
 }

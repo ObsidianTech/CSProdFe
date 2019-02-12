@@ -1,16 +1,46 @@
 <template>
-    <div>
-        <button v-on:click="play"></button>
+    <div class="playerbox">
+        <div>
+            <button v-on:click="pre()">{{ pre }}</button>
+        </div>
+        <div>
+            <button v-on:click="play(); changeState();">{{ state }}</button>
+        </div>
+        <div>
+            <button v-on:click="next()">{{ next }}</button>
+        </div>
     </div>
 </template>
 
 <script>
-var song = new Audio('../assets/tracks/5G.mp3');
+var songs = ["5G.mp3", "2.VPN2.mp3"]
+var currentSong = 0;
+var song = new Audio();
+
 export default{
     name: "player",
+    data(){
+        return{
+            isPlaying: false,
+            state: "|>",
+            pre: "<",
+            next: ">"
+        }
+    },
     methods:{
         play: function (){
-            song.play();
+            if(song.paused){
+                if(song.currentTime == 0){
+                    song.src = require("../assets/tracks/" + songs[currentSong]);
+                }
+                song.play();
+            }else{
+                song.pause();
+            }
+        },
+        changeState: function (){
+            this.isPlaying = !this.isPlaying;
+            this.state = this.isPlaying ? '||':'|>'
         }
     }
 }
@@ -18,8 +48,20 @@ export default{
 
 <style scoped>
 button{
-    width:30px;
-    height:30px; 
-    background-color: white;
+    width:auto;
+    height:70px;
+    color:blanchedalmond;
+    font-size: 2em;
+    text-align:center;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerbox{
+    display:flex;
+}
+
+.playerbox div{
+    flex: 33%;
 }
 </style>

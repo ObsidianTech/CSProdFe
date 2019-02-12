@@ -1,13 +1,13 @@
 <template>
     <div class="playerbox">
         <div>
-            <button v-on:click="pre()">{{ pre }}</button>
+            <button v-on:click="previousTrack()">{{ pre }}</button>
         </div>
         <div>
             <button v-on:click="play(); changeState();">{{ state }}</button>
         </div>
         <div>
-            <button v-on:click="next()">{{ next }}</button>
+            <button v-on:click="nextTrack()">{{ next }}</button>
         </div>
     </div>
 </template>
@@ -41,6 +41,28 @@ export default{
         changeState: function (){
             this.isPlaying = !this.isPlaying;
             this.state = this.isPlaying ? '||':'|>'
+        },
+        nextTrack: function (){
+            currentSong++;
+
+            if(currentSong == songs.length){
+                currentSong = 0;
+            }
+            song.src = require("../assets/tracks/" + songs[currentSong]);
+            song.play();
+            this.isPlaying = true;
+            this.state = this.isPlaying ? '||':'|>'
+        },
+        previousTrack: function (){
+            if(currentSong == 0){
+                currentSong = songs.length - 1;
+            }else{
+                currentSong--;
+            }
+            song.src = require("../assets/tracks/" + songs[currentSong]);
+            song.play();
+            this.isPlaying = true;
+            this.state = this.isPlaying ? '||':'|>'
         }
     }
 }
@@ -63,5 +85,7 @@ button{
 
 .playerbox div{
     flex: 33%;
+    margin: 20px;
+    padding: 5px;
 }
 </style>

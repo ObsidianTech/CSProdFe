@@ -27,7 +27,8 @@
           <div class="footericons">
             <a href="https://www.facebook.com/Crypt0Sound/"><img class="social" src="../assets/icons/Facebook.svg" /></a>
             <a href="https://www.instagram.com/crypto_sound/?hl=en"><img class="social" src="../assets/icons/Instagram.svg" /></a>
-            <a href="https://twitter.com/i/notifications?lang=en"><img class="social" src="../assets/icons/Twitter.svg" /></a>
+            <a href="https://twitter.com/nameschrisjames"><img class="social" src="../assets/icons/Twitter.svg" /></a>
+            <a href="https://www.youtube.com/channel/UC_0j0BlEHk3vvFFy6JmE34g/featured"><img class="social" src="../assets/icons/YouTube.svg" /></a>
           </div>
         </div>
   </div>
@@ -162,6 +163,7 @@ table {
 
 .footer{
   height: 100px;
+  width: 100%;
   left:0; right:0;
   top:0; bottom:0;
   margin:auto;
@@ -170,12 +172,55 @@ table {
 
 .footericons{
   display: flex;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
 }
 
 .social{
-  flex: 30%;
+  flex: 25%;
   width: 85%;
   height: auto;
   margin: 0 5% 0 5%;
+}
+
+@media only screen and (min-width:474px) {
+    .banner{
+      width:100%;
+      height: auto; 
+      align-items: center;
+      justify-content: center;
+    }
+
+    .banner img{
+      display: block;
+      height:90px;
+      width:auto;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .covercontainer img{
+    width: 65%;
+    height: auto;
+    }
+
+    .arrow{
+      display: none;
+    }
+
+    .arrow::before{
+      display: none;
+    }
+}
+
+@media only screen and (min-width:587px) {
+  .covercontainer img{
+    padding:13px;
+    width: 350px;
+    height: auto;
+    }
 }
 </style>

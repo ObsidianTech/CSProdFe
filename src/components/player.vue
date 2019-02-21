@@ -11,11 +11,13 @@
                 <button v-on:click="nextTrack()">{{ next }}</button>
             </div>
         </div>
+            <p>{{trackname}}</p>
     </div>
 </template>
 
 <script>
 var songs = ["5G.mp3", "2.VPN2.mp3"];
+var tracknames = ["5G","vpn","3 a.m.","Amazon Prime","OMW","Peach Emoji (Interlude)","Torrents","Relapse","Withdrawal","Sober","A New Day"]
 var currentSong = 0;
 var song = new Audio();
 export default{
@@ -27,6 +29,7 @@ export default{
             pre: "<",
             next: ">",
             percentage: 0,
+            trackname: undefined
         }
     },
     methods:{
@@ -57,6 +60,7 @@ export default{
             song.play();
             this.isPlaying = true;
             this.state = this.isPlaying ? '||':'|>'
+            this.setTitle();
         },
         previousTrack: function (){
             if(currentSong == 0){
@@ -68,12 +72,18 @@ export default{
             song.play();
             this.isPlaying = true;
             this.state = this.isPlaying ? '||':'|>'
+            this.setTitle();
         },
         track: function(){
             this.percentage = song.currentTime / song.duration * 100;
         },
+        setTitle: function (){
+            this.trackname = tracknames[currentSong];
+        },
         init: function(){
             song.addEventListener("timeupdate", this.track);
+            song.addEventListener("ended", this.nextTrack);
+            this.setTitle();
         }
     },
     mounted() {
@@ -91,6 +101,8 @@ button{
     text-align:center;
     justify-content: center;
     align-items: center;
+    background-color:black;
+    border: none;
 }
 
 .playerbox{
@@ -168,4 +180,13 @@ button{
     background: -o-linear-gradient(top, #80e4df 0%, #75dbd6 13%, #5ec4bf 33%, #57bbb6 47%, #419d99 80%, #378f8b 100%);
     background: linear-gradient(top, #80e4df 0%, #75dbd6 13%, #5ec4bf 33%, #57bbb6 47%, #419d99 80%, #378f8b 100%);*/
 }
+
+@media only screen and (min-width:474px) {
+    .playerbox div{
+        flex: 33%;
+        margin: 45px;
+        padding: 5px;
+    }
+}
+
 </style>

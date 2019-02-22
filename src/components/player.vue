@@ -16,7 +16,7 @@
 </template>
 
 <script>
-var songs = ["5G.mp3","vpn.mp3","3 a.m..mp3","Amazon Prime.mp3","OMW.mp3","Peach Emoji (Interlude).mp3","Torrents.mp3","Relapse.mp3","Withdrawal.mp3","Sober.mp3","A New Day.mp3"];
+var songs = ["5G.mp3","2. vpn.mp3","3 a.m..mp3","Amazon Prime.mp3","OMW.mp3","Peach Emoji (Interlude).mp3","Torrents.mp3","Relapse.mp3","Withdrawal.mp3","Sober.mp3","A New Day.mp3"];
 var tracknames = ["5G","vpn","3 a.m.","Amazon Prime","OMW","Peach Emoji (Interlude)","Torrents","Relapse","Withdrawal","Sober","A New Day"]
 var currentSong = 0;
 var song = new Audio();

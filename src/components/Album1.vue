@@ -28,7 +28,7 @@
             <a href="https://www.facebook.com/Crypt0Sound/"><img class="social" src="../assets/icons/Facebook.svg" /></a>
             <a href="https://www.instagram.com/crypto_sound/?hl=en"><img class="social" src="../assets/icons/Instagram.svg" /></a>
             <a href="https://twitter.com/nameschrisjames"><img class="social" src="../assets/icons/Twitter.svg" /></a>
-            <a href="https://www.youtube.com/channel/UC_0j0BlEHk3vvFFy6JmE34g/featured"><img class="social" src="../assets/icons/YouTube.svg" /></a>
+            <a href="https://www.youtube.com/channel/UCJNv0GR2XBkky24Uw6QV_5Q"><img class="social" src="../assets/icons/YouTube.svg" /></a>
           </div>
         </div>
   </div>
